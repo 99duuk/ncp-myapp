@@ -24,7 +24,8 @@ public class NcpObjectStorageService implements ObjectStorageService {
 
   final AmazonS3 s3;
 
-  public NcpObjectStorageService(NaverConfig naverConfig) {
+  public NcpObjectStorageService(
+          NaverConfig naverConfig) {
     s3 = AmazonS3ClientBuilder.standard()
         .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
             naverConfig.getEndPoint(), naverConfig.getRegionName()))

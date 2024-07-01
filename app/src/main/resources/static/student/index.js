@@ -78,16 +78,16 @@ function getStudent(e) {
         alert("학생을 조회할 수 없습니다.");
         return;
       }
-    
+
       let student = result.data;
       console.log(student);
-      
+
       document.querySelector("#f-no").value = student.no;
       document.querySelector("#f-name").value = student.name;
       document.querySelector("#f-email").value = student.email;
       if (student.photo) {
-        document.querySelector("#f-photo-origin").href = `https://kr.object.ncloudstorage.com/bitcamp-bucket53-member-photo/${student.photo}`;
-        document.querySelector("#f-photo").src = `https://jafdpuys3518.edge.naverncp.com/qRPqP06Ry7/${student.photo}?type=f&w=80&h=80&faceopt=true&ttype=jpg`;
+        document.querySelector("#f-photo-origin").href = `https://kr.object.ncloudstorage.com/ncp08-bucket-990324-member-photo/${student.photo}`;
+        document.querySelector("#f-photo").src = `https://71xbrx1v3587.edge.naverncp.com/0epgF42RCv/${student.photo}?type=f&w=80&h=80&faceopt=true&ttype=jpg`;
       } /*else {
         document.querySelector("#f-photo").src = "../images/no-body.webp";
       }*/
@@ -95,9 +95,9 @@ function getStudent(e) {
       document.querySelector("#f-postNo").value = student.postNo;
       document.querySelector("#f-basicAddress").value = student.basicAddress;
       document.querySelector("#f-detailAddress").value = student.detailAddress;
-      
+
       document.querySelector("#f-working").checked = student.working;
-      
+
       document.querySelector(
         `input[name="gender"][value="${student.gender}"]`
       ).checked = true;
@@ -113,9 +113,9 @@ document.querySelector("#btn-insert").onclick = () => {
   const formData = new FormData(form);
 
   fetch("../students", {
-      method: "POST",
-      body: formData
-    })
+    method: "POST",
+    body: formData
+  })
     .then((response) => {
       return response.json();
     })

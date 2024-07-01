@@ -9,6 +9,7 @@
 ```
 # docker network ls
 # docker network create jenkins
+    // 브리지 생김. docker - jenkins 연결...
 # docker network ls
 ```
 
@@ -91,7 +92,7 @@ USER jenkins
 도커 이미지 생성
 
 ```
-# docker build -t suhodo/my-jenkins:1.0 .
+# docker build -t 99duuk/my-jenkins:1.0 .
 ```
 
 도커 이미지를 도커 허브 사이트에 업로드 하기
@@ -155,6 +156,8 @@ root 사용자로 젠킨스 컨테이너에 접속하기
 호스트# docker exec -itu 0 my-jenkins bash
 컨테이너/# apt-get update
 컨테이너/# apt-get install openjdk-17-jdk -y
+
+이렇게 설치한 경우는 => JAVA_HOME: `/usr/lib/jvm/java-17-openjdk-amd64`
 ```
 
 (docker inspect my-jenkins 에서 확인 가능)
@@ -166,7 +169,7 @@ root 사용자로 젠킨스 컨테이너에 접속하기
     - JDK
       - 'Add JDK' 클릭
         - Name: `openjdk-17`
-        - JAVA_HOME: `/usr/lib/jvm/java-17-openjdk-amd64`
+        - JAVA_HOME: `/opt/java/openjdk'
     - SAVE 클릭
 
 ### github.com의 프로젝트 연동

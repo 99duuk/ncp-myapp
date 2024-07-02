@@ -319,14 +319,12 @@ Login Succeeded   <=== 이렇게 나오면 성공!
 docker 이미지 생성 및 도커 허브에 push 하기
 
 - Dashboard
-  - `myapp` Freestyle 아이템 선택
-    - `구성` 탭 선택
-      - Build Steps
-        - `Add build step` : Execute shell 클릭
-          - `docker login -u '도커허브아이디' -p '도커허브비번' docker.io`
-          - `docker build -t [dockerHub UserName]/[dockerHub Repository]:[version] app/`
-          - `docker push [dockerHub UserName]/[dockerHub Repository]:[version]`
-        - 저장
+
+  - `myapp` Freestyle 아이템 선택 - `구성` 탭 선택 - Build Steps - `Add build step` : Execute shell 클릭 - `docker login -u '도커허브아이디' -p '도커허브비번' docker.io` - `docker build -t [dockerHub UserName]/[dockerHub Repository]:[version] app/` - `docker push [dockerHub UserName]/[dockerHub Repository]:[version]` - 저장
+
+  - `docker login -u 99duuk -p ... docker.io
+docker build -t 99duuk/ncp-myapp:1.0 app/
+docker push 99duuk/ncp-myapp:1.0`
 
 스프링부트 서버에서 docker pull 및 run
 

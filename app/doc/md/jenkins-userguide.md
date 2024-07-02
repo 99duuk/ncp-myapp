@@ -340,3 +340,7 @@ docker push 99duuk/ncp-myapp:1.0`
               - `docker pull [dockerHub UserName]/[dockerHub Repository]:[version]`
               - `docker ps -q --filter name=[containerName] | grep -q . && docker rm -f $(docker ps -aq --filter name=[containerName])`
               - `docker run -d --name [containerName] -p 80:80 [dockerHub UserName]/[dockerHub Repository]:[version]`
+
+`docker login -u 99duuk -p ... docker.io`
+`docker build -t 99duuk/ncp-myapp:1.0 app/`
+`docker push 99duuk/ncp-myapp:1.0 `
